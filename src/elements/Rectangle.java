@@ -3,9 +3,11 @@ package elements;
 import display.Window;
 import position.Point;
 
-public class Rectangle extends Glyph implements Shape {
+public class Rectangle implements Glyph {
 
   private int x0, y0, x1, y1;
+
+  private Glyph parent;
 
   public Rectangle(int x0, int y0, int x1, int y1) {
     this.x0 = x0;
@@ -14,41 +16,22 @@ public class Rectangle extends Glyph implements Shape {
     this.y1 = y1;
   }
 
-  public Rectangle() {
-  }
-
   @Override
-  void draw(Window window) {
+  public void draw(Window window) {
     window.drawRectangle(x0, y0, x1, y1);
   }
 
   @Override
-  void bounds(Shape shape) {
-
-  }
-
-  @Override
-  boolean intersects(Point point) {
+  public boolean intersects(Point point) {
     return false;
   }
 
   @Override
-  void insert(Glyph glyph, int i) {
-
+  public Glyph parent() {
+    return parent;
   }
 
-  @Override
-  void remove(Glyph glyph) {
-
-  }
-
-  @Override
-  Glyph child(int i) {
-    return null;
-  }
-
-  @Override
-  Glyph parent() {
-    return null;
+  public void setParent(Glyph parent) {
+    this.parent = parent;
   }
 }

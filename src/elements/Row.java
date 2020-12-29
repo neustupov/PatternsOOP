@@ -5,49 +5,50 @@ import java.util.ArrayList;
 import java.util.List;
 import position.Point;
 
-public class Row extends Glyph implements Shape {
+public class Row implements Glyph {
+
+  private String row;
 
   private Glyph parent;
   private List<Glyph> childs = new ArrayList<>();
 
-  public Row(String string) {
-    for(Character ch : string.toCharArray()){
-      childs.add(new Char(ch));
-    }
+  public Row(String row) {
+    this.row = row;
   }
 
   @Override
-  void draw(Window window) {
+  public void draw(Window window) {
+    window.drawRow(row);
+    childs.forEach(child -> child.draw(window));
+  }
+
+  public void bounds(Glyph glyph) {
 
   }
 
   @Override
-  void bounds(Shape shape) {
-
-  }
-
-  @Override
-  boolean intersects(Point point) {
+  public boolean intersects(Point point) {
     return false;
   }
 
-  @Override
-  void insert(Glyph glyph, int i) {
+  public void insert(Glyph glyph, int i) {
     childs.add(i, glyph);
   }
 
-  @Override
-  void remove(Glyph glyph) {
+  public void remove(Glyph glyph) {
     childs.remove(glyph);
   }
 
-  @Override
-  Glyph child(int i) {
-    return null;
+  public Glyph child(int i) {
+    return childs.get(i);
   }
 
   @Override
-  Glyph parent() {
-    return null;
+  public Glyph parent() {
+    return parent;
+  }
+
+  public void setParent(Glyph parent) {
+    this.parent = parent;
   }
 }

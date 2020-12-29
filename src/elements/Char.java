@@ -3,46 +3,31 @@ package elements;
 import display.Window;
 import position.Point;
 
-public class Char extends Glyph implements Shape {
+public class Char implements Glyph {
 
   private Character character;
+  private Glyph parent;
 
   public Char(Character character) {
     this.character = character;
   }
 
   @Override
-  void draw(Window window) {
+  public void draw(Window window) {
     window.drawCharacter(character);
   }
 
   @Override
-  void bounds(Shape shape) {
-
-  }
-
-  @Override
-  boolean intersects(Point point) {
+  public boolean intersects(Point point) {
     return false;
   }
 
   @Override
-  void insert(Glyph glyph, int i) {
-
+  public Glyph parent() {
+    return parent;
   }
 
-  @Override
-  void remove(Glyph glyph) {
-
-  }
-
-  @Override
-  Glyph child(int i) {
-    return null;
-  }
-
-  @Override
-  Glyph parent() {
-    return null;
+  public void setParent(Glyph parent) {
+    this.parent = parent;
   }
 }
