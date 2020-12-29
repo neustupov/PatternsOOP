@@ -1,10 +1,8 @@
 package display;
 
-import elements.Char;
-
 public class Window {
 
-  public void drawCharacter(Char c) {
+  public void drawCharacter(Character character) {
 
   }
 

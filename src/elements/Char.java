@@ -5,9 +5,15 @@ import position.Point;
 
 public class Char extends Glyph implements Shape {
 
+  private Character character;
+
+  public Char(Character character) {
+    this.character = character;
+  }
+
   @Override
   void draw(Window window) {
-    window.drawCharacter(this);
+    window.drawCharacter(character);
   }
 
   @Override
