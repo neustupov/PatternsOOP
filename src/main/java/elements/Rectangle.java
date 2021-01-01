@@ -1,11 +1,14 @@
 package elements;
 
 import display.Window;
+import lombok.AllArgsConstructor;
+import lombok.Setter;
 import position.Point;
 
 /**
  * Конечный компонент прямоугольника
  */
+@AllArgsConstructor
 public class Rectangle implements Glyph {
 
   /**
@@ -16,14 +19,8 @@ public class Rectangle implements Glyph {
   /**
    * Родитель
    */
+  @Setter
   private Glyph parent;
-
-  public Rectangle(int x0, int y0, int x1, int y1) {
-    this.x0 = x0;
-    this.y0 = y0;
-    this.x1 = x1;
-    this.y1 = y1;
-  }
 
   /**
    * Отрисовывает компонент
@@ -51,9 +48,5 @@ public class Rectangle implements Glyph {
   @Override
   public Glyph parent() {
     return parent;
-  }
-
-  public void setParent(Glyph parent) {
-    this.parent = parent;
   }
 }

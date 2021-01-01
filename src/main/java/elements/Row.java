@@ -3,6 +3,7 @@ package elements;
 import display.Window;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Setter;
 import position.Point;
 
 /**
@@ -18,15 +19,18 @@ public class Row implements Glyph {
   /**
    * Родитель
    */
+  @Setter
   private Glyph parent;
 
   /**
    * Потомки
    */
-  private List<Glyph> childs = new ArrayList<>();
+  private List<Glyph> childs;
 
-  public Row(String row) {
+  public Row(String row, Glyph parent) {
     this.row = row;
+    this.parent = parent;
+    childs = new ArrayList<>();
   }
 
   /**
@@ -97,9 +101,5 @@ public class Row implements Glyph {
   @Override
   public Glyph parent() {
     return parent;
-  }
-
-  public void setParent(Glyph parent) {
-    this.parent = parent;
   }
 }
