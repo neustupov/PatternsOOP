@@ -1,14 +1,9 @@
 package compose;
 
-public class Compositor {
+import common.Glyph;
+import java.util.List;
 
-  private Composition composition;
+abstract class Compositor {
 
-  public void compose(){
-    composition.getChilds();
-  }
-
-  public void setComposition(){
-
-  }
+  abstract void compose(List<Glyph> glyphs);
 }

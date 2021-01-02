@@ -1,6 +1,10 @@
+import compose.ArrayCompositor;
+import compose.Composition;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Composition composition = new Composition(new ArrayCompositor());
+        composition.repair();
     }
 }
