@@ -16,6 +16,10 @@ public class Row extends Glyph {
    */
   private List<Glyph> childs;
 
+  public Row(){
+    childs = new ArrayList<>();
+  }
+
   public Row(Glyph parent) {
     super.setParent(parent);
     childs = new ArrayList<>();
