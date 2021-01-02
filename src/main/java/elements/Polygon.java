@@ -1,21 +1,17 @@
 package elements;
 
+import common.Glyph;
 import display.Window;
-import lombok.AllArgsConstructor;
-import lombok.Setter;
 import position.Point;
 
 /**
  * Конечный компонент многоугольника
  */
-@AllArgsConstructor
-public class Polygon implements Glyph {
+public class Polygon extends Glyph {
 
-  /**
-   * Родитель
-   */
-  @Setter
-  private Glyph parent;
+  public Polygon(Glyph parent) {
+    super.setParent(parent);
+  }
 
   /**
    * Отрисовывает компонент
@@ -41,6 +37,6 @@ public class Polygon implements Glyph {
    */
   @Override
   public Glyph parent() {
-    return parent;
+    return super.parent();
   }
 }

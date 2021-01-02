@@ -1,35 +1,23 @@
 package elements;
 
+import common.Glyph;
 import display.Window;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Setter;
 import position.Point;
 
 /**
  * Промежуточный компонент строки
  */
-public class Row implements Glyph {
-
-  /**
-   * Строка
-   */
-  private String row;
-
-  /**
-   * Родитель
-   */
-  @Setter
-  private Glyph parent;
+public class Row extends Glyph {
 
   /**
    * Потомки
    */
   private List<Glyph> childs;
 
-  public Row(String row, Glyph parent) {
-    this.row = row;
-    this.parent = parent;
+  public Row(Glyph parent) {
+    super.setParent(parent);
     childs = new ArrayList<>();
   }
 
@@ -40,7 +28,6 @@ public class Row implements Glyph {
    */
   @Override
   public void draw(Window window) {
-    window.drawRow(row);
     childs.forEach(child -> child.draw(window));
   }
 
@@ -72,6 +59,7 @@ public class Row implements Glyph {
    */
   @Override
   public void insert(Glyph glyph, int i) {
+    glyph.setParent(this);
     childs.add(i, glyph);
   }
 
@@ -82,6 +70,7 @@ public class Row implements Glyph {
    */
   @Override
   public void remove(Glyph glyph) {
+    glyph.setParent(null);
     childs.remove(glyph);
   }
 
@@ -100,6 +89,6 @@ public class Row implements Glyph {
    */
   @Override
   public Glyph parent() {
-    return parent;
+    return super.parent();
   }
 }

@@ -1,19 +1,23 @@
-package elements;
+package common;
 
 import display.Window;
+import lombok.Setter;
 import position.Point;
 
 /**
  * Родительский интерфейс элементов
  */
-interface Glyph {
+public abstract class Glyph {
+
+  @Setter
+  private Glyph parent;
 
   /**
    * Отрисовывает компонент
    *
    * @param window Window
    */
-  default void draw(Window window) {
+  public void draw(Window window) {
     throw new UnsupportedOperationException();
   }
 
@@ -22,7 +26,7 @@ interface Glyph {
    *
    * @param glyph Объект компонента
    */
-  default void bounds(Glyph glyph) {
+  public void bounds(Glyph glyph) {
     throw new UnsupportedOperationException();
   }
 
@@ -31,7 +35,7 @@ interface Glyph {
    *
    * @param point Point
    */
-  default boolean intersects(Point point) {
+  public boolean intersects(Point point) {
     throw new UnsupportedOperationException();
   }
 
@@ -41,7 +45,7 @@ interface Glyph {
    * @param glyph Объект компонента
    * @param i Индекс
    */
-  default void insert(Glyph glyph, int i) {
+  public void insert(Glyph glyph, int i) {
     throw new UnsupportedOperationException();
   }
 
@@ -50,7 +54,7 @@ interface Glyph {
    *
    * @param glyph Объект компонента
    */
-  default void remove(Glyph glyph) {
+  public void remove(Glyph glyph) {
     throw new UnsupportedOperationException();
   }
 
@@ -59,14 +63,14 @@ interface Glyph {
    *
    * @param i Индекс
    */
-  default Glyph child(int i) {
+  public Glyph child(int i) {
     throw new UnsupportedOperationException();
   }
 
   /**
    * Возвращает родителя компонента
    */
-  default Glyph parent() {
-    throw new UnsupportedOperationException();
+  public Glyph parent() {
+    return this.parent;
   }
 }

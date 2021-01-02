@@ -1,26 +1,23 @@
 package elements;
 
+import common.Glyph;
 import display.Window;
-import lombok.AllArgsConstructor;
-import lombok.Setter;
 import position.Point;
 
 /**
  * Конечный компонент символа
  */
-@AllArgsConstructor
-public class Char implements Glyph {
+public class Char extends Glyph {
 
   /**
    * Символ
    */
   private Character character;
 
-  /**
-   * Родитель
-   */
-  @Setter
-  private Glyph parent;
+  public Char(Character character, Glyph parent) {
+    this.character = character;
+    super.setParent(parent);
+  }
 
   /**
    * Отрисовывает компонент
@@ -47,6 +44,6 @@ public class Char implements Glyph {
    */
   @Override
   public Glyph parent() {
-    return parent;
+    return super.parent();
   }
 }

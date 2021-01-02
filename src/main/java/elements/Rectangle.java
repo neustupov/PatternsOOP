@@ -1,26 +1,26 @@
 package elements;
 
+import common.Glyph;
 import display.Window;
-import lombok.AllArgsConstructor;
-import lombok.Setter;
 import position.Point;
 
 /**
  * Конечный компонент прямоугольника
  */
-@AllArgsConstructor
-public class Rectangle implements Glyph {
+public class Rectangle extends Glyph {
 
   /**
    * Координаты
    */
   private int x0, y0, x1, y1;
 
-  /**
-   * Родитель
-   */
-  @Setter
-  private Glyph parent;
+  public Rectangle(int x0, int y0, int x1, int y1, Glyph parent) {
+    this.x0 = x0;
+    this.y0 = y0;
+    this.x1 = x1;
+    this.y1 = y1;
+    super.setParent(parent);
+  }
 
   /**
    * Отрисовывает компонент
@@ -47,6 +47,6 @@ public class Rectangle implements Glyph {
    */
   @Override
   public Glyph parent() {
-    return parent;
+    return super.parent();
   }
 }
