@@ -6,25 +6,10 @@ import factories.elements.menu.MacMenu;
 import factories.elements.menu.Menu;
 import factories.elements.scrollbar.MacScrollBar;
 import factories.elements.scrollbar.ScrollBar;
+import lombok.NoArgsConstructor;
 
-public class MacFactory implements GUIFactory {
-
-  private static volatile MacFactory instance = null;
-
-  private MacFactory() {
-
-  }
-
-  public static MacFactory getInstance() {
-    if (instance == null) {
-      synchronized(MacFactory.class) {
-        if (instance == null) {
-          instance = new MacFactory();
-        }
-      }
-    }
-    return instance;
-  }
+@NoArgsConstructor
+public class MacFactory extends GUIFactorySingleton implements GUIFactory {
 
   public Button getButton(){
     return new MacButton();

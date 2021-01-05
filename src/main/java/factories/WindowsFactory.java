@@ -6,25 +6,10 @@ import factories.elements.menu.Menu;
 import factories.elements.menu.WindowsMenu;
 import factories.elements.scrollbar.ScrollBar;
 import factories.elements.scrollbar.WindowsScrollBar;
+import lombok.NoArgsConstructor;
 
-public class WindowsFactory implements GUIFactory {
-
-  private static volatile WindowsFactory instance = null;
-
-  private WindowsFactory() {
-
-  }
-
-  public static WindowsFactory getInstance() {
-    if (instance == null) {
-      synchronized(WindowsFactory.class) {
-        if (instance == null) {
-          instance = new WindowsFactory();
-        }
-      }
-    }
-    return instance;
-  }
+@NoArgsConstructor
+public class WindowsFactory extends GUIFactorySingleton implements GUIFactory {
 
   public Button getButton(){
     return new WindowsButton();
