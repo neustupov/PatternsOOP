@@ -12,11 +12,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Button button = factory.getButton();
-        Menu menu = factory.getMenu();
-        ScrollBar scrollBar = factory.getScrollBar();
+        getComponents();
 
         Composition composition = new Composition(new ArrayCompositor());
         composition.repair();
+    }
+
+    public static void getComponents(){
+        Button button = factory.getButton();
+        Menu menu = factory.getMenu();
+        ScrollBar scrollBar = factory.getScrollBar();
     }
 }

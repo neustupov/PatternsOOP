@@ -4,7 +4,7 @@ import common.Glyph;
 
 public abstract class Button extends Glyph {
 
-  void press(){
+  public String press(){
     throw new UnsupportedOperationException();
   }
 }

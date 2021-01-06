@@ -9,7 +9,7 @@ import factories.elements.scrollbar.WindowsScrollBar;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class WindowsFactory extends GUIFactorySingleton implements GUIFactory {
+public class WindowsFactory implements GUIFactory {
 
   public Button getButton(){
     return new WindowsButton();

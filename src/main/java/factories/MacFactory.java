@@ -9,7 +9,7 @@ import factories.elements.scrollbar.ScrollBar;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class MacFactory extends GUIFactorySingleton implements GUIFactory {
+public class MacFactory implements GUIFactory {
 
   public Button getButton(){
     return new MacButton();

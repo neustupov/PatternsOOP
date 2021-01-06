@@ -4,7 +4,7 @@ import common.Glyph;
 
 public abstract class Menu extends Glyph {
 
-  void popup(){
+  public String popup(){
     throw new UnsupportedOperationException();
   }
 }

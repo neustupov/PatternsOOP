@@ -3,7 +3,7 @@ package factories.elements.menu;
 public class MacMenu extends Menu{
 
   @Override
-  void popup() {
-    System.out.println("MacMenu");
+  public String popup() {
+    return "MacMenu";
   }
 }

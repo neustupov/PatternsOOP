@@ -4,7 +4,7 @@ import common.Glyph;
 
 public abstract class ScrollBar extends Glyph {
 
-  void scrollTo(){
+  public String scrollTo(){
     throw new UnsupportedOperationException();
   }
 }
