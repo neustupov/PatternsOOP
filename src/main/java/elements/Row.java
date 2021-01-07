@@ -4,6 +4,7 @@ import common.Glyph;
 import display.Window;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Getter;
 import position.Point;
 
 /**
@@ -14,6 +15,7 @@ public class Row extends Glyph {
   /**
    * Потомки
    */
+  @Getter
   private List<Glyph> childs;
 
   public Row(){

@@ -8,18 +8,36 @@ import factories.elements.scrollbar.ScrollBar;
 import factories.elements.scrollbar.WindowsScrollBar;
 import lombok.NoArgsConstructor;
 
+/**
+ * Фабрика для Win
+ */
 @NoArgsConstructor
 public class WindowsFactory implements GUIFactory {
 
-  public Button getButton(){
+  /**
+   * Вернуть компонент кнопки
+   *
+   * @return Кнопка
+   */
+  public Button getButton() {
     return new WindowsButton();
   }
 
-  public Menu getMenu(){
+  /**
+   * Вернуть компонент меню
+   *
+   * @return Меню
+   */
+  public Menu getMenu() {
     return new WindowsMenu();
   }
 
-  public ScrollBar getScrollBar(){
+  /**
+   * Вернуть компонент полосы прокрутки
+   *
+   * @return Полоса прокрутки
+   */
+  public ScrollBar getScrollBar() {
     return new WindowsScrollBar();
   }
 }

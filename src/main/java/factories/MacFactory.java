@@ -8,18 +8,36 @@ import factories.elements.scrollbar.MacScrollBar;
 import factories.elements.scrollbar.ScrollBar;
 import lombok.NoArgsConstructor;
 
+/**
+ * Фабрика для Mac
+ */
 @NoArgsConstructor
 public class MacFactory implements GUIFactory {
 
-  public Button getButton(){
+  /**
+   * Вернуть компонент кнопки
+   *
+   * @return Кнопка
+   */
+  public Button getButton() {
     return new MacButton();
   }
 
-  public Menu getMenu(){
+  /**
+   * Вернуть компонент меню
+   *
+   * @return Меню
+   */
+  public Menu getMenu() {
     return new MacMenu();
   }
 
-  public ScrollBar getScrollBar(){
+  /**
+   * Вернуть компонент полосы прокрутки
+   *
+   * @return Полоса прокрутки
+   */
+  public ScrollBar getScrollBar() {
     return new MacScrollBar();
   }
 }

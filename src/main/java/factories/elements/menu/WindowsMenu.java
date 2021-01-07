@@ -1,7 +1,15 @@
 package factories.elements.menu;
 
-public class WindowsMenu extends Menu{
+/**
+ * Меню для Win
+ */
+public class WindowsMenu extends Menu {
 
+  /**
+   * Отобразить меню
+   *
+   * @return Строка с результатом
+   */
   @Override
   public String popup() {
     return "WindowsMenu";

@@ -1,7 +1,15 @@
 package factories.elements.menu;
 
-public class MacMenu extends Menu{
+/**
+ * Меню для Mac
+ */
+public class MacMenu extends Menu {
 
+  /**
+   * Отобразить меню
+   *
+   * @return Строка с результатом
+   */
   @Override
   public String popup() {
     return "MacMenu";
