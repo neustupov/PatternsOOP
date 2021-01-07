@@ -20,7 +20,7 @@ public abstract class MonoGlyph extends Glyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    component.draw(window);
+  public String draw(Window window) {
+    return component.draw(window);
   }
 }

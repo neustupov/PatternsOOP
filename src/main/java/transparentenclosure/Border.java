@@ -19,9 +19,8 @@ public class Border extends MonoGlyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    super.draw(window);
-    drawBorder(window);
+  public String draw(Window window) {
+    return super.draw(window) + " " + drawBorder(window);
   }
 
   /**
@@ -29,6 +28,7 @@ public class Border extends MonoGlyph {
    *
    * @param window Window
    */
-  private void drawBorder(Window window) {
+  private String drawBorder(Window window) {
+    return window.drawBorder();
   }
 }

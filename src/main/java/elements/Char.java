@@ -1,6 +1,7 @@
 package elements;
 
-import common.Glyph;
+import common.
+    Glyph;
 import display.Window;
 import position.Point;
 
@@ -25,8 +26,8 @@ public class Char extends Glyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    window.drawCharacter(character);
+  public String draw(Window window) {
+    return window.drawCharacter(character);
   }
 
   /**

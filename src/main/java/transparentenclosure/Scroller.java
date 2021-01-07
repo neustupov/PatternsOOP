@@ -19,9 +19,8 @@ public class Scroller extends MonoGlyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    super.draw(window);
-    drawScroller(window);
+  public String draw(Window window) {
+    return super.draw(window) + " " + drawScroller(window);
   }
 
   /**
@@ -29,5 +28,7 @@ public class Scroller extends MonoGlyph {
    *
    * @param window Window
    */
-  private void drawScroller(Window window){}
+  private String drawScroller(Window window){
+    return window.drawScroller();
+  }
 }

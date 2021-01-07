@@ -28,8 +28,8 @@ public class Rectangle extends Glyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    window.drawRectangle(x0, y0, x1, y1);
+  public String draw(Window window) {
+    return window.drawRectangle(x0, y0, x1, y1);
   }
 
   /**

@@ -17,7 +17,7 @@ public abstract class Glyph {
    *
    * @param window Window
    */
-  public void draw(Window window) {
+  public String draw(Window window) {
     throw new UnsupportedOperationException();
   }
 
@@ -36,6 +36,15 @@ public abstract class Glyph {
    * @param point Point
    */
   public boolean intersects(Point point) {
+    throw new UnsupportedOperationException();
+  }
+
+  /**
+   * Добавить дочерний компонент
+   *
+   * @param glyph Объект компонента
+   */
+  public void insert(Glyph glyph) {
     throw new UnsupportedOperationException();
   }
 

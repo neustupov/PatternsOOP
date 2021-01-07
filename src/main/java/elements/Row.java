@@ -33,8 +33,10 @@ public class Row extends Glyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
-    childs.forEach(child -> child.draw(window));
+  public String draw(Window window) {
+    StringBuffer sb = new StringBuffer();
+    childs.forEach(child -> sb.append(child.draw(window)));
+    return sb.toString();
   }
 
   /**
@@ -55,6 +57,17 @@ public class Row extends Glyph {
   @Override
   public boolean intersects(Point point) {
     return false;
+  }
+
+  /**
+   * Добавить дочерний компонент по индексу
+   *
+   * @param glyph Объект компонента
+   */
+  @Override
+  public void insert(Glyph glyph) {
+    glyph.setParent(this);
+    childs.add(glyph);
   }
 
   /**

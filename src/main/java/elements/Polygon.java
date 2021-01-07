@@ -2,6 +2,9 @@ package elements;
 
 import common.Glyph;
 import display.Window;
+import java.util.HashMap;
+import java.util.Map;
+import lombok.AllArgsConstructor;
 import position.Point;
 
 /**
@@ -9,8 +12,15 @@ import position.Point;
  */
 public class Polygon extends Glyph {
 
+  private Map<Integer, Integer> coords = new HashMap<>();
+
   public Polygon(Glyph parent) {
     super.setParent(parent);
+  }
+
+  public Polygon(Glyph parent, Map<Integer, Integer> coords) {
+    super.setParent(parent);
+    this.coords = coords;
   }
 
   /**
@@ -19,7 +29,8 @@ public class Polygon extends Glyph {
    * @param window Window
    */
   @Override
-  public void draw(Window window) {
+  public String draw(Window window) {
+    return window.drawPolygon(coords);
   }
 
   /**
