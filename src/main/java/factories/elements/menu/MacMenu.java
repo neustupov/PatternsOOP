@@ -6,6 +6,13 @@ package factories.elements.menu;
 public class MacMenu extends Menu {
 
   /**
+   * Конструктор конкретного прототипа
+   */
+  public MacMenu(Menu menu) {
+    super(menu);
+  }
+
+  /**
    * Отобразить меню
    *
    * @return Строка с результатом
@@ -13,5 +20,15 @@ public class MacMenu extends Menu {
   @Override
   public String popup() {
     return "MacMenu";
+  }
+
+  /**
+   * Метод клонирования
+   *
+   * @return Меню
+   */
+  @Override
+  public Menu clone() {
+    return new MacMenu(this);
   }
 }

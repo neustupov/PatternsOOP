@@ -8,6 +8,14 @@ import common.Glyph;
 public abstract class Menu extends Glyph {
 
   /**
+   * Конструктор прототипа меню
+   *
+   * @param menu Меню
+   */
+  public Menu(Menu menu) {
+  }
+
+  /**
    * Отобразить меню
    *
    * @return Строка с результатом
@@ -15,4 +23,11 @@ public abstract class Menu extends Glyph {
   public String popup() {
     throw new UnsupportedOperationException();
   }
+
+  /**
+   * Метод клонирования
+   *
+   * @return Меню
+   */
+  public abstract Menu clone();
 }

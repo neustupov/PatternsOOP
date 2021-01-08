@@ -6,6 +6,13 @@ package factories.elements.button;
 public class WindowsButton extends Button {
 
   /**
+   * Конструктор конкретного прототипа
+   */
+  public WindowsButton(Button button) {
+    super(button);
+  }
+
+  /**
    * Нажать
    *
    * @return Строка с результатом
@@ -13,5 +20,15 @@ public class WindowsButton extends Button {
   @Override
   public String press() {
     return "WindowsButton";
+  }
+
+  /**
+   * Метод клонирования
+   *
+   * @return Кнопка
+   */
+  @Override
+  public Button clone() {
+    return new WindowsButton(this);
   }
 }
