@@ -31,6 +31,9 @@ class CompositionTest {
         new Rectangle(1,2,3,4, null));
   }
 
+  /**
+   * Проверяем корректность работы стратегий
+   */
   @Test
   void repair() {
     compositionReverse.setGlyphs(glyphs);

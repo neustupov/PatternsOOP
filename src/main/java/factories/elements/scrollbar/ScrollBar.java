@@ -1,7 +1,9 @@
 package factories.elements.scrollbar;
 
 import common.Glyph;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Абстрактный класс полосы прокрутки
@@ -9,12 +11,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public abstract class ScrollBar extends Glyph {
 
+  @Getter
+  @Setter
+  private Integer randomScrollPoint;
+
   /**
    * Конструктор прототипа полосы прокрутки
    *
    * @param scrollBar Меню
    */
   public ScrollBar(ScrollBar scrollBar) {
+    randomScrollPoint = scrollBar.getRandomScrollPoint();
   }
 
   /**

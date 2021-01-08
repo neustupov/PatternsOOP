@@ -22,6 +22,9 @@ class BorderTest {
     border = new Border(new Char('A', null));
   }
 
+  /**
+   * проверяем декоратор
+   */
   @Test
   void draw() {
     assertEquals(border.draw(window), "A" + " " + "Draw border");
