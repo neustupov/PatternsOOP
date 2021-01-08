@@ -1,10 +1,12 @@
 package factories.elements.button;
 
 import common.Glyph;
+import lombok.NoArgsConstructor;
 
 /**
  * Абстрактный класс кнопки
  */
+@NoArgsConstructor
 public abstract class Button extends Glyph {
 
   /**

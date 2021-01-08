@@ -1,10 +1,12 @@
 package factories.elements.menu;
 
 import common.Glyph;
+import lombok.NoArgsConstructor;
 
 /**
  * Абстрактный класс меню
  */
+@NoArgsConstructor
 public abstract class Menu extends Glyph {
 
   /**

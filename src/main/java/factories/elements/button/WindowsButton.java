@@ -1,8 +1,11 @@
 package factories.elements.button;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Класс кнопки для системы Win
  */
+@NoArgsConstructor
 public class WindowsButton extends Button {
 
   /**

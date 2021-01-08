@@ -1,8 +1,11 @@
 package factories.elements.button;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Класс кнопки для системы Mac
  */
+@NoArgsConstructor
 public class MacButton extends Button {
 
   /**

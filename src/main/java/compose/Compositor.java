@@ -13,5 +13,5 @@ abstract class Compositor {
    *
    * @param glyphs Данные для обработки
    */
-  abstract void compose(List<Glyph> glyphs);
+  abstract List<Glyph> compose(List<Glyph> glyphs);
 }

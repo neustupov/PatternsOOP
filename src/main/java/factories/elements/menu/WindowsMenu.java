@@ -1,8 +1,11 @@
 package factories.elements.menu;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Меню для Win
  */
+@NoArgsConstructor
 public class WindowsMenu extends Menu {
 
   /**

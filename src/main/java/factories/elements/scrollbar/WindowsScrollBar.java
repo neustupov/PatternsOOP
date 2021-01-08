@@ -1,8 +1,11 @@
 package factories.elements.scrollbar;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Полоса прокрутки для Win
  */
+@NoArgsConstructor
 public class WindowsScrollBar extends ScrollBar {
 
   /**

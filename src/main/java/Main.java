@@ -1,4 +1,4 @@
-import compose.ArrayCompositor;
+import compose.ReverseCompositor;
 import compose.Composition;
 import factories.GUIFactory;
 import factories.GUIFactorySingleton;
@@ -14,7 +14,7 @@ public class Main {
 
         getComponents();
 
-        Composition composition = new Composition(new ArrayCompositor());
+        Composition composition = new Composition(new ReverseCompositor());
         composition.repair();
     }
 

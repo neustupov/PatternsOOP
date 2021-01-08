@@ -1,8 +1,11 @@
 package factories.elements.scrollbar;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Полоса прокрутки для Mac
  */
+@NoArgsConstructor
 public class MacScrollBar extends ScrollBar {
 
   /**

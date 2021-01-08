@@ -1,10 +1,12 @@
 package factories.elements.scrollbar;
 
 import common.Glyph;
+import lombok.NoArgsConstructor;
 
 /**
  * Абстрактный класс полосы прокрутки
  */
+@NoArgsConstructor
 public abstract class ScrollBar extends Glyph {
 
   /**

@@ -2,23 +2,26 @@ package compose;
 
 import common.Glyph;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import lombok.NoArgsConstructor;
 
 /**
- * Алгоритм(стратегия) композиции простого объекта - оставляем только 1й объект в списке
+ * Алгоритм(стратегия) композиции - реверс списка
  */
 @NoArgsConstructor
-public class SimpleCompositor extends Compositor {
+public class ReverseCompositor extends Compositor {
 
   /**
-   * Реализуем алгоритм композиции
+   * Реализуем алгоритм композиции - разворачиваем список
    *
    * @param glyphs Данные для обработки
    */
   @Override
   List<Glyph> compose(List<Glyph> glyphs) {
-    return new ArrayList<>(Collections.singleton(glyphs.get(0)));
+    List<Glyph> result = new ArrayList<>(glyphs);
+    Collections.reverse(result);
+    return result;
   }
 }

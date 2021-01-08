@@ -1,8 +1,11 @@
 package factories.elements.menu;
 
+import lombok.NoArgsConstructor;
+
 /**
  * Меню для Mac
  */
+@NoArgsConstructor
 public class MacMenu extends Menu {
 
   /**

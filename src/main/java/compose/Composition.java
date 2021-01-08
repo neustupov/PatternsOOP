@@ -2,6 +2,7 @@ package compose;
 
 import common.Glyph;
 import java.util.List;
+import lombok.Setter;
 
 /**
  * Композиция компонентов
@@ -16,6 +17,7 @@ public class Composition extends Glyph {
   /**
    * Список компонентов
    */
+  @Setter
   private List<Glyph> glyphs;
 
   public Composition(Compositor compositor) {
@@ -26,8 +28,8 @@ public class Composition extends Glyph {
    * Применяет алгоритм композиции компонентов - в агрументах передаем объекты, к которым
    * применяется алгоритм(стратегия)
    */
-  public void repair() {
-    compositor.compose(glyphs);
+  public List<Glyph> repair() {
+    return compositor.compose(glyphs);
   }
 
   /**
