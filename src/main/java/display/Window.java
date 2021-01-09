@@ -1,11 +1,28 @@
 package display;
 
+import common.Glyph;
 import java.util.Map;
+import lombok.Setter;
 
 /**
  * Рисует компонент
  */
 public class Window {
+
+  @Setter
+  private Glyph glyph;
+
+  public String redraw(){
+    return "redraw";
+  }
+
+  public String iconify(){
+    return "Iconify";
+  }
+
+  public String lower(){
+    return "lower";
+  }
 
   /**
    * Рисует символ
@@ -68,5 +85,9 @@ public class Window {
    */
   public String drawScroller() {
     return "Draw scroller";
+  }
+
+  public String draw(){
+    return glyph.draw(this);
   }
 }
