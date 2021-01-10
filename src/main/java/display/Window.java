@@ -2,6 +2,7 @@ package display;
 
 import common.Glyph;
 import display.impl.WindowImpl;
+import display.impl.WindowsImplFactory;
 import java.util.Map;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,14 +17,9 @@ public abstract class Window {
   private Glyph glyph;
 
   @Setter
-  private WindowImpl windowImpl;
-
-  public Window(WindowImpl windowImpl) {
-    this.windowImpl = windowImpl;
-  }
+  private static WindowImpl windowImpl = WindowsImplFactory.getInstance();
 
   //Методы управления окнами
-
 
   public String redraw(){
     return "redraw";

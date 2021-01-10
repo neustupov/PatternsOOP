@@ -5,16 +5,15 @@ import static org.junit.jupiter.api.Assertions.*;
 import common.Glyph;
 import display.ApplicationWindow;
 import display.Window;
-import display.impl.MacWindowImpl;
-import display.impl.WindowImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Spy;
 
 class RowTest {
 
   private Row row;
+  @Spy
   private Window window;
-  private WindowImpl windowImpl;
   private Glyph glyph;
   private Glyph glyph1;
 
@@ -24,8 +23,6 @@ class RowTest {
     glyph = new Char('A', null);
     glyph1 = new Char('B', null);
     window = new ApplicationWindow(null);
-    windowImpl = new MacWindowImpl();
-    window.setWindowImpl(windowImpl);
   }
 
   /**
@@ -43,6 +40,6 @@ class RowTest {
   void draw() {
     row.insert(glyph);
     row.insert(glyph1);
-    assertEquals(row.draw(window), "A MacWindowImpl B MacWindowImpl ");
+    assertEquals(row.draw(window), "A WinWindowImpl B WinWindowImpl ");
   }
 }

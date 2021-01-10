@@ -21,11 +21,11 @@ public class WinWindowImpl implements WindowImpl {
 
   @Override
   public String drawBorder() {
-    return "Draw MacWindowImpl border";
+    return "Draw WinWindowImpl border";
   }
 
   @Override
   public String drawScroller() {
-    return "Draw MacWindowImpl scroller";
+    return "Draw WinWindowImpl scroller";
   }
 }
