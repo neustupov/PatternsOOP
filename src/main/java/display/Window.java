@@ -1,16 +1,29 @@
 package display;
 
 import common.Glyph;
+import display.impl.WindowImpl;
 import java.util.Map;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
  * Рисует компонент
  */
-public class Window {
+@NoArgsConstructor
+public abstract class Window {
 
   @Setter
   private Glyph glyph;
+
+  @Setter
+  private WindowImpl windowImpl;
+
+  public Window(WindowImpl windowImpl) {
+    this.windowImpl = windowImpl;
+  }
+
+  //Методы управления окнами
+
 
   public String redraw(){
     return "redraw";
@@ -24,13 +37,15 @@ public class Window {
     return "lower";
   }
 
+  //Методы отрисовки графики
+
   /**
    * Рисует символ
    *
    * @param character Символ
    */
   public String drawCharacter(Character character) {
-    return character.toString();
+    return windowImpl.deviceChar(character);
   }
 
   /**
@@ -42,7 +57,7 @@ public class Window {
    * @param y1 y1
    */
   public String drawRectangle(int x0, int y0, int x1, int y1) {
-    return "Rectangle coords " + x0 + " " + y0 + " " + x1 + " " + y1;
+    return windowImpl.deviceRect(x0, y0, x1, y1);
   }
 
   /**
@@ -52,16 +67,7 @@ public class Window {
    * @return Строка с результатом
    */
   public String drawPolygon(Map<Integer, Integer> coords) {
-    StringBuffer sb = new StringBuffer();
-    coords.keySet().forEach(key -> {
-      sb.append("x: ");
-      sb.append(key);
-      sb.append(" ");
-      sb.append("y:");
-      sb.append(coords.get(key));
-      sb.append(" ");
-    });
-    return sb.toString();
+    return windowImpl.devicePoly(coords);
   }
 
   /**
@@ -70,21 +76,20 @@ public class Window {
    * @param row Строка
    */
   public void drawRow(String row) {
-
   }
 
   /**
    * Рисует рамку
    */
   public String drawBorder() {
-    return "Draw border";
+    return windowImpl.drawBorder();
   }
 
   /**
    * Рисует полосу прокрутки
    */
   public String drawScroller() {
-    return "Draw scroller";
+    return windowImpl.drawScroller();
   }
 
   public String draw(){

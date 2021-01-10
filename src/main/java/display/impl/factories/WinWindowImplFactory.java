@@ -1,5 +1,5 @@
 package display.impl.factories;
 
-public class WinWindowImplFactory {
+public class WinWindowImplFactory extends WindowsImplFactory{
 
 }

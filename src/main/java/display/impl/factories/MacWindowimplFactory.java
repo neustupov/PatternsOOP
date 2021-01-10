@@ -1,5 +1,5 @@
 package display.impl.factories;
 
-public class MacWindowimplFactory {
+public class MacWindowimplFactory extends WindowsImplFactory{
 
 }

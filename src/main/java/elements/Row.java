@@ -18,7 +18,7 @@ public class Row extends Glyph {
   @Getter
   private List<Glyph> childs;
 
-  public Row(){
+  public Row() {
     childs = new ArrayList<>();
   }
 
@@ -35,7 +35,10 @@ public class Row extends Glyph {
   @Override
   public String draw(Window window) {
     StringBuffer sb = new StringBuffer();
-    childs.forEach(child -> sb.append(child.draw(window)));
+    childs.forEach(child -> {
+      sb.append(child.draw(window));
+      sb.append(" ");
+    });
     return sb.toString();
   }
 
