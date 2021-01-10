@@ -2,7 +2,7 @@ package display;
 
 import common.Glyph;
 import display.impl.WindowImpl;
-import display.impl.WindowsImplFactory;
+import display.impl.WindowSystemFactory;
 import java.util.Map;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,7 +17,7 @@ public abstract class Window {
   private Glyph glyph;
 
   @Setter
-  private static WindowImpl windowImpl = WindowsImplFactory.getInstance();
+  private static WindowImpl windowImpl = WindowSystemFactory.getInstance().getWIInstance();
 
   //Методы управления окнами
 
