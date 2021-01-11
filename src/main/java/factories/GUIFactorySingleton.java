@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class GUIFactorySingleton {
 
-  private static GUIFactory instance;
+  private static volatile GUIFactory instance;
 
   /**
    * Хранилище фабрик

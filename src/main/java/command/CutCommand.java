@@ -4,20 +4,21 @@ import doc.Document;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class PasteCommand implements Command {
+public class CutCommand implements Command{
 
   private String buffer;
   private Document doc;
 
   @Override
   public String execute() {
-    return doc.paste(buffer);
+    doc.cut(buffer);
+    return buffer + " cut in Doc";
   }
 
   @Override
   public String unexecute() {
-    doc.cut(buffer);
-    return buffer + " delete from Doc";
+    doc.paste(buffer);
+    return buffer + " insert to Doc";
   }
 
   @Override

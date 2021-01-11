@@ -2,9 +2,10 @@ package display.impl;
 
 public class WindowSystemFactory {
 
-  private static WindowSystemFactory instance;
+  private static volatile WindowSystemFactory instance;
 
-  private WindowSystemFactory(){}
+  private WindowSystemFactory() {
+  }
 
   /**
    * Текущая система
@@ -17,14 +18,16 @@ public class WindowSystemFactory {
    * @return WindowSystemFactory
    */
   public static WindowSystemFactory getInstance() {
-    if (instance == null) {
+    WindowSystemFactory localInstance = instance;
+    if (localInstance  == null) {
       synchronized (WindowSystemFactory.class) {
-        if (instance == null) {
-            instance = new WindowSystemFactory();
+        localInstance = instance;
+        if (localInstance == null) {
+          instance = localInstance = new WindowSystemFactory();
         }
       }
     }
-    return instance;
+    return localInstance;
   }
 
   /**
