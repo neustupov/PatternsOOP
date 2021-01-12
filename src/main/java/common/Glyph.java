@@ -1,6 +1,7 @@
 package common;
 
 import display.Window;
+import iterators.Iterator;
 import lombok.Setter;
 import position.Point;
 
@@ -82,4 +83,6 @@ public abstract class Glyph {
   public Glyph parent() {
     return this.parent;
   }
+
+  public abstract Iterator createIterator();
 }

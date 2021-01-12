@@ -2,6 +2,8 @@ package elements;
 
 import common.Glyph;
 import display.Window;
+import iterators.Iterator;
+import iterators.ListIterator;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -112,5 +114,10 @@ public class Row extends Glyph {
   @Override
   public Glyph parent() {
     return super.parent();
+  }
+
+  @Override
+  public Iterator createIterator() {
+    return new ListIterator(this);
   }
 }
