@@ -4,7 +4,6 @@ import common.Glyph;
 import display.Window;
 import java.util.HashMap;
 import java.util.Map;
-import lombok.AllArgsConstructor;
 import position.Point;
 
 /**

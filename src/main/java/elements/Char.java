@@ -1,7 +1,6 @@
 package elements;
 
-import common.
-    Glyph;
+import common.Glyph;
 import display.Window;
 import position.Point;
 

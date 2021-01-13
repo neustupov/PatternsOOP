@@ -1,22 +1,23 @@
 package iterators;
 
 import common.Glyph;
-import java.util.List;
+import org.apache.commons.lang3.ArrayUtils;
 
-public class ListIterator implements Iterator {
+public class ReverseIterator implements Iterator {
 
   private int index;
-  private List<Glyph> glyphs;
+  private Glyph[] glyphs;
 
-  public ListIterator(List<Glyph> glyphs) {
+  public ReverseIterator(Glyph[] glyphs) {
     this.glyphs = glyphs;
   }
 
   @Override
   public Glyph next() {
+    ArrayUtils.reverse(glyphs);
     Glyph result = null;
     if(hasNext()){
-      result = glyphs.get(index);
+      result = glyphs[index];
       index++;
     }
     return result;
@@ -24,6 +25,6 @@ public class ListIterator implements Iterator {
 
   @Override
   public boolean hasNext() {
-    return index < glyphs.size();
+    return index < glyphs.length;
   }
 }

@@ -2,6 +2,7 @@ package elements;
 
 import common.Glyph;
 import display.Window;
+import iterators.Iterable;
 import iterators.Iterator;
 import iterators.ListIterator;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import position.Point;
 /**
  * Промежуточный компонент строки
  */
-public class Row extends Glyph {
+public class Row extends Glyph implements Iterable {
 
   /**
    * Потомки
@@ -117,7 +118,7 @@ public class Row extends Glyph {
   }
 
   @Override
-  public Iterator createIterator() {
-    return new ListIterator(this);
+  public Iterator iterator() {
+    return new ListIterator(this.getChilds());
   }
 }
