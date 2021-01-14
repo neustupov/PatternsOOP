@@ -6,6 +6,7 @@ import iterators.Iterable;
 import iterators.Iterator;
 import iterators.ReverseIterator;
 import lombok.Getter;
+import visitor.Visitor;
 
 @Getter
 public class Column extends Glyph implements Iterable {
@@ -94,5 +95,10 @@ public class Column extends Glyph implements Iterable {
   @Override
   public Iterator iterator() {
     return new ReverseIterator(this.getChilds());
+  }
+
+  @Override
+  public void accept(Visitor v) {
+    v.visitColumn(this);
   }
 }

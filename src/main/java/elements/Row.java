@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
 import position.Point;
+import visitor.Visitor;
 
 /**
  * Промежуточный компонент строки
@@ -120,5 +121,10 @@ public class Row extends Glyph implements Iterable {
   @Override
   public Iterator iterator() {
     return new ListIterator(this.getChilds());
+  }
+
+  @Override
+  public void accept(Visitor v) {
+    v.visitRow(this);
   }
 }

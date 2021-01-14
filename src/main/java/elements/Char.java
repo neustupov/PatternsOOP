@@ -3,6 +3,7 @@ package elements;
 import common.Glyph;
 import display.Window;
 import position.Point;
+import visitor.Visitor;
 
 /**
  * Конечный компонент символа
@@ -45,5 +46,10 @@ public class Char extends Glyph {
   @Override
   public Glyph parent() {
     return super.parent();
+  }
+
+  @Override
+  public void accept(Visitor v) {
+    v.visitChar(this);
   }
 }

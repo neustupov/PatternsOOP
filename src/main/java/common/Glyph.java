@@ -3,6 +3,7 @@ package common;
 import display.Window;
 import lombok.Setter;
 import position.Point;
+import visitor.Visitor;
 
 /**
  * Родительский интерфейс элементов
@@ -81,5 +82,9 @@ public abstract class Glyph {
    */
   public Glyph parent() {
     return this.parent;
+  }
+
+  public void accept(Visitor v){
+    throw new UnsupportedOperationException();
   }
 }
