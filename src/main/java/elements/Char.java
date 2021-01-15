@@ -48,6 +48,10 @@ public class Char extends Glyph {
     return super.parent();
   }
 
+  /**
+   * Реализация метода обхода для посетителя
+   * @param v Интерфейс посетителя
+   */
   @Override
   public void accept(Visitor v) {
     v.visitChar(this);

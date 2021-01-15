@@ -118,11 +118,20 @@ public class Row extends Glyph implements Iterable {
     return super.parent();
   }
 
+  /**
+   * Получить итератор
+   *
+   * @return Итератор
+   */
   @Override
   public Iterator iterator() {
     return new ListIterator(this.getChilds());
   }
 
+  /**
+   * Реализация метода обхода для посетителя
+   * @param v Интерфейс посетителя
+   */
   @Override
   public void accept(Visitor v) {
     v.visitRow(this);

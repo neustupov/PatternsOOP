@@ -84,6 +84,10 @@ public abstract class Glyph {
     return this.parent;
   }
 
+  /**
+   * Метод обхода для посетителя
+   * @param v Интерфейс посетителя
+   */
   public void accept(Visitor v){
     throw new UnsupportedOperationException();
   }

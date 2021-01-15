@@ -8,6 +8,9 @@ import elements.Char;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Тест патерна "Декоратор"
+ */
 class BorderTest {
 
   private Border border;

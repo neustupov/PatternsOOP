@@ -6,6 +6,9 @@ import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Тест патерна "Прототип"
+ */
 class MacScrollBarTest {
 
   private MacScrollBar macScrollBar;

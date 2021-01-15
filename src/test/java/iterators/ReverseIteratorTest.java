@@ -7,6 +7,9 @@ import elements.Column;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Тест патерна "Итератор"
+ */
 class ReverseIteratorTest {
 
   private Column parentColumn;

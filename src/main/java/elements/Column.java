@@ -8,9 +8,15 @@ import iterators.ReverseIterator;
 import lombok.Getter;
 import visitor.Visitor;
 
+/**
+ * Компонент столбца
+ */
 @Getter
 public class Column extends Glyph implements Iterable {
 
+  /**
+   * Порядковый номер
+   */
   private Integer number;
 
   /**
@@ -68,7 +74,7 @@ public class Column extends Glyph implements Iterable {
   public void remove(Glyph glyph) {
     glyph.setParent(null);
     for (int i = 0; i < childs.length; i++) {
-      if (childs[i].equals(glyph)){
+      if (childs[i].equals(glyph)) {
         childs[i] = null;
       }
     }
@@ -92,11 +98,21 @@ public class Column extends Glyph implements Iterable {
     return super.parent();
   }
 
+  /**
+   * Получить итератор
+   *
+   * @return Итератор
+   */
   @Override
   public Iterator iterator() {
     return new ReverseIterator(this.getChilds());
   }
 
+  /**
+   * Реализация метода обхода для посетителя
+   *
+   * @param v Интерфейс посетителя
+   */
   @Override
   public void accept(Visitor v) {
     v.visitColumn(this);

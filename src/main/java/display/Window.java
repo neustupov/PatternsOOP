@@ -16,20 +16,38 @@ public abstract class Window {
   @Setter
   private Glyph glyph;
 
+  /**
+   * Компонент паттерна "Мост" - позволяет добавить сторонюю реализацию для некоторых операций
+   */
   @Setter
   private static WindowImpl windowImpl = WindowSystemFactory.getInstance().getWIInstance();
 
   //Методы управления окнами
 
-  public String redraw(){
+  /**
+   * Перерисовать
+   *
+   * @return Результат выполнения
+   */
+  public String redraw() {
     return "redraw";
   }
 
-  public String iconify(){
+  /**
+   * Добавить иконки
+   *
+   * @return Результат выполнения
+   */
+  public String iconify() {
     return "Iconify";
   }
 
-  public String lower(){
+  /**
+   * Уменьшить
+   *
+   * @return Результат выполнения
+   */
+  public String lower() {
     return "lower";
   }
 
@@ -88,7 +106,12 @@ public abstract class Window {
     return windowImpl.drawScroller();
   }
 
-  public String draw(){
+  /**
+   * Рисовать текущий элемент
+   *
+   * @return Результат выполнения
+   */
+  public String draw() {
     return glyph.draw(this);
   }
 }

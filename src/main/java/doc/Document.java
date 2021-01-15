@@ -4,30 +4,71 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+/**
+ * Класс документа - учавствует в паттерне "Команда"
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 public class Document {
 
+  /**
+   * Шрифт
+   */
   @Setter
   private String font;
+  /**
+   * Содержимое
+   */
   private String symbols;
+  /**
+   * Название
+   */
   private String name;
 
-  public String open(){
+  /**
+   * Открыть
+   *
+   * @return Результат выполнения
+   */
+  public String open() {
     return "Doc is open";
   }
 
-  public String close(){
+  /**
+   * Закрыть
+   *
+   * @return Результат выполнения
+   */
+  public String close() {
     return "Doc is close";
   }
 
-  public String cut(String buffer){
+  /**
+   * Вырезать
+   *
+   * @param buffer Бувфер
+   * @return Результат выполнения
+   */
+  public String cut(String buffer) {
     return symbols.replace(buffer, "");
   }
-  public String copy(){
+
+  /**
+   * Копировать
+   *
+   * @return Результат выполнения
+   */
+  public String copy() {
     return "Doc is copy";
   }
-  public String paste(String buffer){
+
+  /**
+   * Вставить
+   *
+   * @param buffer Буфер
+   * @return Результат выполнения
+   */
+  public String paste(String buffer) {
     return symbols.concat(buffer);
   }
 }

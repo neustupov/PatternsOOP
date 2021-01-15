@@ -1,5 +1,8 @@
 package display.impl;
 
+/**
+ * Фабрика для WindowImpl
+ */
 public class WindowSystemFactory {
 
   private static volatile WindowSystemFactory instance;
