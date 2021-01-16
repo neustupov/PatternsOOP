@@ -2,6 +2,7 @@ package elements;
 
 import common.Glyph;
 import display.Window;
+import lombok.Getter;
 import position.Point;
 import visitor.Visitor;
 
@@ -13,6 +14,7 @@ public class Char extends Glyph {
   /**
    * Символ
    */
+  @Getter
   private Character character;
 
   public Char(Character character, Glyph parent) {

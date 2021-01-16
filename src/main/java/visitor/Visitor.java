@@ -29,4 +29,11 @@ public interface Visitor {
    * @param column Столбец
    */
   void visitColumn(Column column);
+
+  /**
+   * Возвращает объект состояния посетителя
+   *
+   * @return Состояние посетителя
+   */
+  Object getState();
 }

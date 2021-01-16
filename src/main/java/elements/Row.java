@@ -134,6 +134,6 @@ public class Row extends Glyph implements Iterable {
    */
   @Override
   public void accept(Visitor v) {
-    v.visitRow(this);
+    getChilds().forEach(child -> v.visitChar((Char) child));
   }
 }
