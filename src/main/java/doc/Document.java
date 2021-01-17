@@ -1,12 +1,15 @@
 package doc;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
  * Класс документа - учавствует в паттерне "Команда"
  */
+@Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Document {
@@ -14,7 +17,6 @@ public class Document {
   /**
    * Шрифт
    */
-  @Setter
   private String font;
   /**
    * Содержимое
