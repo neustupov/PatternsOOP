@@ -1,11 +1,13 @@
 package display;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 /**
  * Окно приложения
  */
 @AllArgsConstructor
+@NoArgsConstructor
 public class ApplicationWindow extends Window {
 
   /**
