@@ -1,10 +1,12 @@
 package display;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 /**
  * Окно диалога
  */
+@NoArgsConstructor
 @AllArgsConstructor
 public class DialogWindow extends Window {
 
