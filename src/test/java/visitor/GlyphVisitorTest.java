@@ -7,6 +7,9 @@ import elements.Row;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Тест "посетителя"
+ */
 class GlyphVisitorTest {
 
   private Char ch1;
