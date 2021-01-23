@@ -9,6 +9,6 @@ public class Square implements Shape {
 
   @Override
   public String draw(Context context) {
-    return "Square with height and width: " + height + "-" + width;
+    return "Square with height and width: " + height + "-" + width + " and RGB color " + context.color.getRGB();
   }
 }

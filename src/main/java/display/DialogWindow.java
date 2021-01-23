@@ -2,6 +2,7 @@ package display;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Окно диалога
@@ -13,6 +14,7 @@ public class DialogWindow extends Window {
   /**
    * Родитель
    */
+  @Setter
   private Window owner;
 
   /**

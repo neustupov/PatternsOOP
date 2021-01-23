@@ -7,6 +7,6 @@ public class Point implements Shape {
 
   @Override
   public String draw(Context context) {
-    return context.color.toString();
+    return "Point with color " + context.color.toString();
   }
 }
