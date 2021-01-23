@@ -8,30 +8,27 @@ import lombok.Getter;
 import lombok.Setter;
 
 @AllArgsConstructor
-public class Picture implements Shape {
+public class PictureProxy implements Shape{
 
   @Getter
   @Setter
   private String pictureSize;
+  @Getter
+  private Picture picture;
   private List<Shape> childs;
 
-  public Picture(Shape ...shapes) {
+  public PictureProxy(Shape ...shapes) {
     this.childs = new LinkedList<>();
     this.childs.addAll(Arrays.asList(shapes));
-  }
-
-  public Picture(List<Shape> shapes) {
-    this.childs = new LinkedList<>();
-    this.childs.addAll(shapes);
+    this.setPictureSize("10");
   }
 
   @Override
   public String draw(Context context) {
-    StringBuilder sb = new StringBuilder();
-    for (Shape p: childs) {
-      sb.append(p.draw(context));
-      sb.append(" ");
+    if (this.picture == null){
+      this.picture = new Picture(childs);
+      this.picture.setPictureSize("100500");
     }
-    return sb.toString();
+    return picture.draw(context);
   }
 }

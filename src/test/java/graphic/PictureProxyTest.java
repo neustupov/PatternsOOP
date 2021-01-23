@@ -9,25 +9,28 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+/**
+ * Тест прокси
+ */
 @ExtendWith(MockitoExtension.class)
-class ShapeFactoryTest {
+class PictureProxyTest {
 
-  private Context context;
   @Spy
   private ShapeFactory factory;
-  private Picture picture;
+  private PictureProxy pictureProxy;
+  private Context context;
 
   @BeforeEach
   void setUp() {
     context = new Context(3, 4, new Color(100500));
-    picture = new Picture(factory.createCircle(10),
-        factory.createPoint(),
-        factory.createSquare(1, 2));
+    pictureProxy = new PictureProxy(factory.createCircle(10));
   }
 
   @Test
-  void testPictureDraw() {
-    assertEquals(picture.draw(context), "Circle with radius: 10and color: -16676716 Point "
-        + "with color -16676716 Square with height and width: 1-2 and RGB color -16676716 ");
+  void draw() {
+    assertNull(pictureProxy.getPicture());
+    assertEquals(pictureProxy.getPictureSize(), "10");
+    assertEquals(pictureProxy.draw(context), "Circle with radius: 10and color: -16676716 ");
+    assertEquals(pictureProxy.getPicture().getPictureSize(), "100500");
   }
 }
