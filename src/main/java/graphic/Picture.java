@@ -20,6 +20,7 @@ public class Picture implements Shape {
     StringBuilder sb = new StringBuilder();
     for (Shape p: childs) {
       sb.append(p.draw(context));
+      sb.append(" ");
     }
     return sb.toString();
   }
