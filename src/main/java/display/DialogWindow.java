@@ -26,4 +26,9 @@ public class DialogWindow extends Window {
   public String lower() {
     return owner.lower();
   }
+
+  @Override
+  public String notify(String message) {
+    return "DialogWindow get message: " + message;
+  }
 }

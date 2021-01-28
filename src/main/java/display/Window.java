@@ -3,6 +3,7 @@ package display;
 import common.Glyph;
 import display.impl.WindowImpl;
 import display.impl.WindowSystemFactory;
+import display.mediator.Mediator;
 import java.util.Map;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,9 @@ public abstract class Window {
 
   @Setter
   private Glyph glyph;
+
+  @Setter
+  protected Mediator mediator;
 
   /**
    * Компонент паттерна "Мост" - позволяет добавить сторонюю реализацию для некоторых операций
@@ -114,4 +118,10 @@ public abstract class Window {
   public String draw() {
     return glyph.draw(this);
   }
+
+  public String send(String message) {
+    return mediator.send(message, this);
+  }
+
+  public abstract String notify(String message);
 }

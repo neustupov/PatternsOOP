@@ -24,4 +24,9 @@ public class ApplicationWindow extends Window {
   public String redraw() {
     return owner.redraw();
   }
+
+  @Override
+  public String notify(String message) {
+    return "ApplicationWindow get message: " + message;
+  }
 }
