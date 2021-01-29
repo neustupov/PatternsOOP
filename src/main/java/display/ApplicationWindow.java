@@ -25,6 +25,12 @@ public class ApplicationWindow extends Window {
     return owner.redraw();
   }
 
+  /**
+   * Оповещает компонент
+   *
+   * @param message Сообщение
+   * @return Результат выполнения
+   */
   @Override
   public String notify(String message) {
     return "ApplicationWindow get message: " + message;

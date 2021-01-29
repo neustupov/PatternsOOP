@@ -25,6 +25,12 @@ public class IconWindow extends Window {
     return owner.iconify();
   }
 
+  /**
+   * Оповещает компонент
+   *
+   * @param message Сообщение
+   * @return Результат выполнения
+   */
   @Override
   public String notify(String message) {
     return "IconWindow get message: " + message;

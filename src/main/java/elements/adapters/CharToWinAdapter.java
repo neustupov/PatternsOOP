@@ -5,8 +5,14 @@ import display.ApplicationWindow;
 import display.Window;
 import elements.Char;
 
+/**
+ * Адаптер
+ */
 public class CharToWinAdapter extends Char {
 
+  /**
+   * Компонент, интерфейс которого нужно адаптировать
+   */
   private ApplicationWindow window;
 
   public CharToWinAdapter(Character character, Glyph parent,  ApplicationWindow window) {

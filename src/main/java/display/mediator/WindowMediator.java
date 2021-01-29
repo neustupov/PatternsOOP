@@ -6,8 +6,14 @@ import display.IconWindow;
 import display.Window;
 import lombok.Setter;
 
+/**
+ * Конкретный посредник
+ */
 public class WindowMediator extends Mediator {
 
+  /**
+   * Компоннты
+   */
   @Setter
   private IconWindow iconWindow;
   @Setter
@@ -15,6 +21,13 @@ public class WindowMediator extends Mediator {
   @Setter
   private ApplicationWindow applicationWindow;
 
+  /**
+   * Обработка сообщения от компонента
+   *
+   * @param message Сообщение
+   * @param sender Компонент
+   * @return Результат полнения
+   */
   @Override
   public String send(String message, Window sender) {
     StringBuilder sb = new StringBuilder();

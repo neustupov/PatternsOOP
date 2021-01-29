@@ -4,8 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
 
+/**
+ * Объект запроса
+ */
 public class Request {
 
+  /**
+   * Параметры запроса
+   */
   @Getter
   private Map<String, String> params;
 

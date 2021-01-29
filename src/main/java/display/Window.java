@@ -17,6 +17,9 @@ public abstract class Window {
   @Setter
   private Glyph glyph;
 
+  /**
+   * Объект посредника
+   */
   @Setter
   protected Mediator mediator;
 
@@ -119,9 +122,21 @@ public abstract class Window {
     return glyph.draw(this);
   }
 
+  /**
+   * Отправка сообщения посреднику
+   *
+   * @param message Сообщение
+   * @return Результат
+   */
   public String send(String message) {
     return mediator.send(message, this);
   }
 
+  /**
+   * Оповещает компонент
+   *
+   * @param message Сообщение
+   * @return Результат выполнения
+   */
   public abstract String notify(String message);
 }

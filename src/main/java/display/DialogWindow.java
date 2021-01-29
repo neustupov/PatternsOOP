@@ -27,6 +27,12 @@ public class DialogWindow extends Window {
     return owner.lower();
   }
 
+  /**
+   * Оповещает компонент
+   *
+   * @param message Сообщение
+   * @return Результат выполнения
+   */
   @Override
   public String notify(String message) {
     return "DialogWindow get message: " + message;

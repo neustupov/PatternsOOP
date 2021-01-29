@@ -4,6 +4,9 @@ import static app.handlers.BaseHandler.Attrs.SECOND;
 
 import lombok.NoArgsConstructor;
 
+/**
+ * Конкретный участник цепочки обязанностей
+ */
 @NoArgsConstructor
 public class SecondHandler extends BaseHandler {
 
@@ -11,6 +14,12 @@ public class SecondHandler extends BaseHandler {
     super(nextHandler);
   }
 
+  /**
+   * Обработка запроса
+   *
+   * @param request Запрос
+   * @return Результат
+   */
   @Override
   public String handle(Request request) {
     String result = "";

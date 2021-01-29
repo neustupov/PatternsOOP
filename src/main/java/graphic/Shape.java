@@ -1,7 +1,7 @@
 package graphic;
 
 /**
- * интерфейс приспособленца
+ * Интерфейс приспособленца
  */
 public interface Shape {
 

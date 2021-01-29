@@ -5,8 +5,17 @@ import app.interpreter.math.expressions.MinusExpression;
 import app.interpreter.math.expressions.NumberExpression;
 import app.interpreter.math.expressions.PlusExpresion;
 
+/**
+ * Контекст интерпретатора
+ */
 public class Context {
 
+  /**
+   * Произвести действие над лексическим деревом выражения
+   *
+   * @param s Выражение
+   * @return Экспресия
+   */
   public Expression evaluate(String s) {
 
     int pos = s.length() - 1;

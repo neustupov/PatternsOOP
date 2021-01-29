@@ -8,6 +8,9 @@ import graphic.Square;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+/**
+ * Фасад приложения
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 public class AppFacade {
@@ -18,6 +21,11 @@ public class AppFacade {
   private Row row;
   private Window window;
 
+  /**
+   * Основной метод фасада
+   *
+   * @return Результат выполнения
+   */
   public String startApp() {
     StringBuffer sb = new StringBuffer();
 
