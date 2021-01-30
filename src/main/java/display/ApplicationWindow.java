@@ -1,19 +1,35 @@
 package display;
 
+import display.attributes.Size;
+import display.observer.Observable;
+import display.observer.Observer;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 /**
- * Окно приложения
+ * Окно приложения - участник паттерна "Наблюдатель" - рассылает сообщения
  */
 @AllArgsConstructor
-@NoArgsConstructor
-public class ApplicationWindow extends Window {
+public class ApplicationWindow extends Window implements Observable {
+
+  /**
+   * Список наблюдателей
+   */
+  private List<Observer> observers;
 
   /**
    * Родитель
    */
   private Window owner;
+
+  public ApplicationWindow() {
+    this.observers = new ArrayList<>();
+  }
+
+  public ApplicationWindow(Window owner) {
+    this.owner = owner;
+  }
 
   /**
    * Перерисовать
@@ -25,6 +41,11 @@ public class ApplicationWindow extends Window {
     return owner.redraw();
   }
 
+  public void setSize(Size size) {
+    this.size = size;
+    notifyObservers();
+  }
+
   /**
    * Оповещает компонент
    *
@@ -34,5 +55,33 @@ public class ApplicationWindow extends Window {
   @Override
   public String notify(String message) {
     return "ApplicationWindow get message: " + message;
+  }
+
+  /**
+   * Добавить наблюдателя
+   *
+   * @param o Наблюдатель
+   */
+  @Override
+  public void registerObserver(Observer o) {
+    observers.add(o);
+  }
+
+  /**
+   * Удалить наблюдателя
+   *
+   * @param o Наблюдатель
+   */
+  @Override
+  public void removeObserver(Observer o) {
+    observers.remove(o);
+  }
+
+  /**
+   * Оповестить наблюдателей
+   */
+  @Override
+  public void notifyObservers() {
+    observers.forEach(observer -> observer.update(size));
   }
 }

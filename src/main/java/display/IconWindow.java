@@ -1,5 +1,7 @@
 package display;
 
+import display.attributes.Size;
+import display.observer.Observer;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +10,7 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor
 @AllArgsConstructor
-public class IconWindow extends Window {
+public class IconWindow extends Window implements Observer {
 
   /**
    * Родитель
@@ -34,5 +36,15 @@ public class IconWindow extends Window {
   @Override
   public String notify(String message) {
     return "IconWindow get message: " + message;
+  }
+
+  /**
+   * Обновить объект
+   *
+   * @param size Размер
+   */
+  @Override
+  public void update(Size size) {
+    this.size = size;
   }
 }

@@ -1,10 +1,12 @@
 package display;
 
 import common.Glyph;
+import display.attributes.Size;
 import display.impl.WindowImpl;
 import display.impl.WindowSystemFactory;
 import display.mediator.Mediator;
 import java.util.Map;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -22,6 +24,13 @@ public abstract class Window {
    */
   @Setter
   protected Mediator mediator;
+
+  /**
+   * Розмер
+   */
+  @Setter
+  @Getter
+  protected Size size;
 
   /**
    * Компонент паттерна "Мост" - позволяет добавить сторонюю реализацию для некоторых операций

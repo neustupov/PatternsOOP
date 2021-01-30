@@ -1,5 +1,7 @@
 package display;
 
+import display.attributes.Size;
+import display.observer.Observer;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -9,7 +11,7 @@ import lombok.Setter;
  */
 @NoArgsConstructor
 @AllArgsConstructor
-public class DialogWindow extends Window {
+public class DialogWindow extends Window implements Observer {
 
   /**
    * Родитель
@@ -36,5 +38,15 @@ public class DialogWindow extends Window {
   @Override
   public String notify(String message) {
     return "DialogWindow get message: " + message;
+  }
+
+  /**
+   * Обновить объект
+   *
+   * @param size Размер
+   */
+  @Override
+  public void update(Size size) {
+    this.size = size;
   }
 }
