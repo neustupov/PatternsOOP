@@ -8,6 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+/**
+ * Тест паттерна "Интерпретатор"
+ */
 @ExtendWith(MockitoExtension.class)
 class ContextTest {
 

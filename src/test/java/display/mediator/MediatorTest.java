@@ -11,6 +11,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+/**
+ * Тест паттерна "Посредник"
+ */
 @ExtendWith(MockitoExtension.class)
 class MediatorTest {
 

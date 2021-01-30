@@ -7,12 +7,18 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Объект прокси для класса Picture
+ */
 @AllArgsConstructor
 public class PictureProxy implements Shape{
 
   @Getter
   @Setter
   private String pictureSize;
+  /**
+   * Проксируемый объект
+   */
   @Getter
   private Picture picture;
   private List<Shape> childs;
@@ -23,6 +29,12 @@ public class PictureProxy implements Shape{
     this.setPictureSize("10");
   }
 
+  /**
+   * Отрисовывоет компонент в рамках контекста
+   *
+   * @param context Контекст
+   * @return Результат выполнения
+   */
   @Override
   public String draw(Context context) {
     if (this.picture == null){

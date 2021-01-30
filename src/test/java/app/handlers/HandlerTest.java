@@ -8,6 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+/**
+ * Тест паттерна "Цепочка обязанностей"
+ */
 @ExtendWith(MockitoExtension.class)
 class HandlerTest {
 
